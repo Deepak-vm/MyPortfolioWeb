@@ -28,7 +28,7 @@ function Navbar() {
                     Contact
                 </Link>
             </nav>
-            <button class="px-4 py-2 text-white border border-purple-500 rounded-md hover:bg-purple-500/20 transition-colors ">
+            <button className="px-4 py-2 text-white border border-purple-500 rounded-md hover:bg-purple-500/20 transition-colors ">
                 Resume
             </button>
 
