@@ -1,32 +1,37 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+
 
 function Navbar() {
     return (
-        <div className="bg-black py-2 px-6 border-b border-gray-800">
-            <div className="container mx-auto flex items-center justify-between">
-                <a href="/" className="text-purple-400 font-bold">
-                    DevPortfolio
-                </a>
+        <div className="container mx-auto py-6 px-4 flex items-center justify-between">
+            <Link href="/" className="flex items-center gap-2">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-r from-purple-600 to-blue-500 flex items-center justify-center">
+                    <h1>DV</h1>
+                </div>
+                <span className="font-bold text-xl">Deepak's Portfolio</span>
+            </Link>
+            <nav className="hidden md:flex items-center gap-8">
+                <Link href="#" className="text-gray-300 hover:text-white transition-colors">
+                    Home
+                </Link>
+                <Link href="#skills" className="text-gray-300 hover:text-white transition-colors">
+                    Skills
+                </Link>
+                <Link href="#projects" className="text-gray-300 hover:text-white transition-colors">
+                    Projects
+                </Link>
+                <Link href="#about" className="text-gray-300 hover:text-white transition-colors">
+                    About
+                </Link>
+                <Link href="#contact" className="text-gray-300 hover:text-white transition-colors">
+                    Contact
+                </Link>
+            </nav>
+            <button class="px-4 py-2 text-white border border-purple-500 rounded-md hover:bg-purple-500/20 transition-colors ">
+                Resume
+            </button>
 
-                {/* Navigation Links - Centered in a single line */}
-                <nav className="flex items-center gap-4">
-                    <a href="/" className="text-white hover:text-purple-400 transition-colors">
-                        Home
-                    </a>
-                    <a href="#skills" className="text-white hover:text-purple-400 transition-colors">
-                        Skills
-                    </a>
-                    <a href="#projects" className="text-white hover:text-purple-400 transition-colors">
-                        Projects
-                    </a>
-                    <a href="#about" className="text-white hover:text-purple-400 transition-colors">
-                        About
-                    </a>
-                    <a href="#contact" className="text-white hover:text-purple-400 transition-colors">
-                        Contact
-                    </a>
-                </nav>
-            </div>
         </div>
     )
 }
