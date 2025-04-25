@@ -28,7 +28,7 @@ function Navbar() {
                     Contact
                 </Link>
             </nav>
-            <button className="px-4 py-2 text-white border border-purple-500 rounded-md hover:bg-purple-500/20 transition-colors ">
+            <button className="px-4 py-2 text-white border border-purple-500 rounded-md hover:bg-purple-500/20 transition-colors " onClick={() => window.open('https://drive.google.com/file/d/1V0nJ76sEHHoiOHojlPzN2NJAPgpU2Vaf/view?usp=sharing', '_blank')}>
                 Resume
             </button>
 

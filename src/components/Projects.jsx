@@ -1,4 +1,8 @@
 import React from 'react'
+import Project1 from "../assets/Project1.png"
+import { BsWindowSidebar } from 'react-icons/bs'
+// import Project2 from "../assets/Project2.png"   
+// import Project3 from "../assets/Project3.png"
 
 function Projects() {
     return (
@@ -12,10 +16,10 @@ function Projects() {
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {/* Project Card 1 */}
                     <div className="bg-[#111827] rounded-lg overflow-hidden border border-purple-500/20 group">
-                        <div className="relative h-48">
-                            {/* <Image src="/placeholder.svg?height=200&width=400" alt="Project 1" fill className="object-cover" /> */}
+                        <div className="relative h-48 overflow-hidden">
+                            <img src={Project1} alt="Learnsphere" className="w-full h-full object-cover" />
                             <div className="absolute inset-0 bg-purple-600/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                                <button variant="outline" className="border-white text-white hover:bg-white/20">
+                                <button className="border border-white px-4 py-2 rounded text-white hover:bg-white/20" onClick={() => window.open('https://learnsphere-lms.vercel.app/')}>
                                     View Project
                                 </button>
                             </div>
@@ -35,17 +39,21 @@ function Projects() {
 
                     {/* Project Card 2 */}
                     <div className="bg-[#111827] rounded-lg overflow-hidden border border-purple-500/20 group">
-                        <div className="relative h-48">
-                            {/* <Image src="/placeholder.svg?height=200&width=400" alt="Project 2" fill className="object-cover" /> */}
+                        <div className="relative h-48 overflow-hidden">
+                            {/* Use placeholder image until Project2.png is available */}
+                            <div className="w-full h-full bg-gray-800 flex items-center justify-center">
+                                <span className="text-gray-500">NFT Market</span>
+                            </div>
                             <div className="absolute inset-0 bg-purple-600/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                                <button variant="outline" className="border-white text-white hover:bg-white/20">
+                                <button onClick={() => window.open('https://github.com/Deepak-vm/Decentralised_nft_marketplace')} className="border border-white px-4 py-2 rounded text-white hover:bg-white/20">
                                     View Project
                                 </button>
                             </div>
                         </div>
                         <div className="p-6">
-                            <h3 className="text-xl font-bold mb-2">Nft Market</h3>
-                            <p className="text-gray-400 mb-4">It is decentralized NFT marketplace that enables users to create, buy, sell  NFTs in a decentralized environment.
+                            <h3 className="text-xl font-bold mb-2">NFT Market</h3>
+                            <p className="text-gray-400 mb-4">
+                                It is decentralized NFT marketplace that enables users to create, buy, sell NFTs in a decentralized environment.
                             </p>
                             <div className="flex flex-wrap gap-2">
                                 <span className="px-2 py-1 bg-purple-900/30 text-purple-400 text-xs rounded">Next.js</span>
@@ -57,10 +65,13 @@ function Projects() {
 
                     {/* Project Card 3 */}
                     <div className="bg-[#111827] rounded-lg overflow-hidden border border-purple-500/20 group">
-                        <div className="relative h-48">
-                            {/* <Image src="/placeholder.svg?height=200&width=400" alt="Project 3" fill className="object-cover" /> */}
+                        <div className="relative h-48 overflow-hidden">
+                            {/* Use placeholder image until Project3.png is available */}
+                            <div className="w-full h-full bg-gray-800 flex items-center justify-center">
+                                <span className="text-gray-500">Movie Recommendation</span>
+                            </div>
                             <div className="absolute inset-0 bg-purple-600/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                                <button variant="outline" className="border-white text-white hover:bg-white/20">
+                                <button className="border border-white px-4 py-2 rounded text-white hover:bg-white/20" onClick={() => window.open('https://github.com/Deepak-vm/movie_recommendation_project')}>
                                     View Project
                                 </button>
                             </div>
@@ -81,8 +92,7 @@ function Projects() {
 
                 <div className="flex justify-center mt-12">
                     <button
-                        variant="outline"
-                        className="inline-flex items-center gap-2 px-6 py-3 text-white font-semibold bg-black border border-purple-500 rounded-md hover:bg-purple-500/20 transition-all ">
+                        className="inline-flex items-center gap-2 px-6 py-3 text-white font-semibold bg-black border border-purple-500 rounded-md hover:bg-purple-500/20 transition-all" onClick={() => window.open('https://github.com/Deepak-vm/')}>
                         View All Projects
                     </button>
                 </div>

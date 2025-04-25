@@ -20,7 +20,7 @@ function Contact() {
                         </div>
                         <div>
                             <h3 className="text-xl font-bold mb-2">Email</h3>
-                            <p className="text-gray-400">hello@devportfolio.com</p>
+                            <p className="text-gray-400">18vdeepak@gmail.com</p>
                         </div>
                     </div>
 
@@ -29,8 +29,8 @@ function Contact() {
                             <FontAwesomeIcon icon={faLinkedin} className="w-6 h-6 text-purple-400" />
                         </div>
                         <div>
-                            <h3 className="text-xl font-bold mb-2">LinkedIn</h3>
-                            <p className="text-gray-400">linkedin.com/in/devportfolio</p>
+                            <a href='https://www.linkedin.com/in/deepakvi18/' rel="noopener noreferrer" target="_blank" className="text-xl font-bold mb-2">LinkedIn</a>
+
                         </div>
                     </div>
 
@@ -39,8 +39,7 @@ function Contact() {
                             <FontAwesomeIcon icon={faGithub} className="w-6 h-6 text-purple-400" />
                         </div>
                         <div>
-                            <h3 className="text-xl font-bold mb-2">GitHub</h3>
-                            <p className="text-gray-400">github.com/devportfolio</p>
+                            <a href='https://github.com/deepak-vm' rel="noopener noreferrer" target="_blank" className="text-xl font-bold mb-2">Github</a>
                         </div>
                     </div>
 
