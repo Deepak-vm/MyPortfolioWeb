@@ -1,115 +1,128 @@
-import { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { 
-  FaHtml5, FaCss3Alt, FaReact, FaNodeJs, FaGithub 
+import { useState } from 'react';
+import {
+    FaHtml5, FaCss3Alt, FaReact, FaNodeJs, FaGithub, FaPython, FaJava
 } from 'react-icons/fa';
-import { 
-  SiTailwindcss, SiJavascript, SiExpress, 
-  SiMysql, SiMongodb, SiSolidity 
+import {
+    SiTailwindcss, SiJavascript, SiExpress,
+    SiMysql, SiMongodb, SiSolidity, SiTypescript,
+    SiNextdotjs, SiFirebase, SiDocker,
+    SiVercel, SiNetlify, SiGit
 } from 'react-icons/si';
 
-const StackIcon = ({ name }) => {
-  const iconMap = {
-    html5: <FaHtml5 size={40} />,
-    css3: <FaCss3Alt size={40} />,
-    tailwind: <SiTailwindcss size={40} />,
-    javascript: <SiJavascript size={40} />,
-    react: <FaReact size={40} />,
-    nodejs: <FaNodeJs size={40} />,
-    express: <SiExpress size={40} />,
-    mysql: <SiMysql size={40} />,
-    mongodb: <SiMongodb size={40} />,
-    solidity: <SiSolidity size={40} />,
-    github: <FaGithub size={40} />
-  };
-  
-  return iconMap[name] || <span>{name}</span>;
+
+const StackIcon = ({ name, size = 32 }) => {
+    const iconMap = {
+        html5: <FaHtml5 size={size} className="text-orange-500" />,
+        css3: <FaCss3Alt size={size} className="text-blue-500" />,
+        tailwind: <SiTailwindcss size={size} className="text-cyan-400" />,
+        javascript: <SiJavascript size={size} className="text-yellow-400" />,
+        typescript: <SiTypescript size={size} className="text-blue-400" />,
+        react: <FaReact size={size} className="text-cyan-400" />,
+        nextjs: <SiNextdotjs size={size} className="text-white" />,
+        nodejs: <FaNodeJs size={size} className="text-green-500" />,
+        express: <SiExpress size={size} className="text-gray-300" />,
+        python: <FaPython size={size} className="text-blue-400" />,
+        java: <FaJava size={size} className="text-red-500" />,
+        mysql: <SiMysql size={size} className="text-blue-600" />,
+        mongodb: <SiMongodb size={size} className="text-green-500" />,
+        firebase: <SiFirebase size={size} className="text-yellow-500" />,
+        docker: <SiDocker size={size} className="text-blue-400" />,
+        vercel: <SiVercel size={size} className="text-white" />,
+        netlify: <SiNetlify size={size} className="text-cyan-400" />,
+        git: <SiGit size={size} className="text-orange-500" />,
+        github: <FaGithub size={size} className="text-white" />,
+        solidity: <SiSolidity size={size} className="text-gray-400" />
+    };
+
+    return iconMap[name] || <span className="text-white">{name}</span>;
 };
-  
+
 
 
 export default function SkillsSection() {
     const [hoveredSkill, setHoveredSkill] = useState(null);
-    const [startIndex, setStartIndex] = useState(0);
 
-    const skills = [
-        { name: "HTML", icon: "html5", color: "bg-yellow-400", textColor: "text-black" },
-        { name: "CSS", icon: "css3", color: "bg-blue-500", textColor: "text-white" },
-        { name: "Tailwind CSS", icon: "tailwind", color: "bg-cyan-500", textColor: "text-white" },
-        { name: "JavaScript", icon: "javascript", color: "bg-yellow-400", textColor: "text-black" },
-        { name: "React", icon: "react", color: "bg-cyan-400", textColor: "text-black" },
-        { name: "Node.js", icon: "nodejs", color: "bg-green-600", textColor: "text-white" },
-        { name: "Express.js", icon: "express", color: "bg-gray-600", textColor: "text-white" },
-        { name: "MySQL", icon: "mysql", color: "bg-blue-900", textColor: "text-orange-300" },
-        { name: "MongoDB", icon: "mongodb", color: "bg-green-800", textColor: "text-white" },
-        { name: "Solidity", icon: "solidity", color: "bg-orange-600", textColor: "text-white" },
-    ];
-
-    const visibleSkills = 6;
-    const maxStartIndex = Math.max(0, skills.length - visibleSkills);
-
-    const nextSkills = () => {
-        setStartIndex(prev => Math.min(prev + 1, maxStartIndex));
+    const skillCategories = {
+        "Frontend": [
+            { name: "JavaScript", icon: "javascript" },
+            { name: "React", icon: "react" },
+            { name: "Tailwind CSS", icon: "tailwind" }
+        ],
+        "Backend": [
+            { name: "Node.js", icon: "nodejs" },
+            { name: "Express.js", icon: "express" },
+        ],
+        "Database": [
+            { name: "MongoDB", icon: "mongodb" },
+            { name: "MySQL", icon: "mysql" },
+        ],
+        "Tools & Others": [
+            { name: "GitHub", icon: "github" },
+            { name: "Docker", icon: "docker" },
+            { name: "Solidity", icon: "solidity" }
+        ]
     };
-
-    const prevSkills = () => {
-        setStartIndex(prev => Math.max(prev - 1, 0));
-    };
-
 
     return (
-        <div className="container mx-auto px-4 py-20 md:py-32">
-            <div className="flex flex-col items-center mb-12">
-                <div className="bg-[#1a1e2a] px-8 py-2 rounded-full mb-8">
-                    <h2 className="text-2xl font-bold">Skills</h2>
+        <section id="skills" className="py-8 px-4 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+            <div className="max-w-5xl mx-auto">
+                {/* Section Header */}
+                <div className="text-center mb-8">
+                    <div className="inline-block">
+                        <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent mb-3">
+                            Skills & Technologies
+                        </h2>
+                        <div className="h-1 w-24 bg-gradient-to-r from-cyan-400 to-purple-400 mx-auto rounded-full"></div>
+                    </div>
+                    <p className="text-gray-400 mt-3 text-base">Technologies I work with</p>
                 </div>
-            </div>
 
-            <div className="flex items-center justify-center gap-10">
-                <button
-                    onClick={prevSkills}
-                    className="p-2 rounded-full bg-gray-700 hover:bg-gray-600 transition-colors"
-                >
-                    <ChevronLeft size={24} />
-                </button>
+                {/* Skills Grid */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    {Object.entries(skillCategories).map(([category, skills]) => (
+                        <div key={category} className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-5 border border-slate-700/50 hover:border-cyan-400/30 transition-all duration-300">
+                            <h3 className="text-lg font-semibold text-cyan-400 mb-4 flex items-center">
+                                <span className="w-2 h-2 bg-cyan-400 rounded-full mr-3"></span>
+                                {category}
+                            </h3>
 
-                <div className="flex gap-20 w-full justify-center">
-                    {skills.slice(startIndex, startIndex + visibleSkills).map((skill) => (
-                        <div
-                            key={skill.name}
-                            className="flex flex-col items-center transition-all duration-300 transform hover:scale-110"
-                            onMouseEnter={() => setHoveredSkill(skill.name)}
-                            onMouseLeave={() => setHoveredSkill(null)}
-                        >
-                            <div
-                                className={`w-20 h-20 ${skill.color} flex items-center justify-center rounded-md mb-2 shadow-lg transition-all duration-300 ${hoveredSkill === skill.name ? 'scale-110' : ''}`}
-                            >
-                                <span className={`text-2xl font-bold ${skill.textColor}`}>
-                                    <StackIcon name={skill.icon} />
-                                </span>
+                            <div className="grid grid-cols-3 gap-3">
+                                {skills.map((skill) => (
+                                    <div
+                                        key={skill.name}
+                                        className="group relative bg-slate-700/30 rounded-lg p-3 border border-slate-600/30 hover:border-cyan-400/50 transition-all duration-300 cursor-pointer"
+                                        onMouseEnter={() => setHoveredSkill(skill.name)}
+                                        onMouseLeave={() => setHoveredSkill(null)}
+                                    >
+                                        <div className="flex flex-col items-center text-center">
+                                            <div className="mb-2 transform group-hover:scale-110 transition-transform duration-300">
+                                                <StackIcon name={skill.icon} size={28} />
+                                            </div>
+                                            <h4 className="text-white text-xs font-medium group-hover:text-cyan-300 transition-colors">
+                                                {skill.name}
+                                            </h4>
+                                        </div>
+                                    </div>
+                                ))}
                             </div>
-                            <span className="text-sm font-medium opacity-90">{skill.name}</span>
                         </div>
                     ))}
                 </div>
 
-                <button
-                    onClick={nextSkills}
-                    className="p-2 rounded-full bg-gray-700 hover:bg-gray-600 transition-colors"
-                >
-                    <ChevronRight size={24} />
-                </button>
+                {/* Additional Info */}
+                <div className="mt-8 text-center">
+                    <div className="bg-gradient-to-r from-slate-800/50 to-slate-700/50 backdrop-blur-sm rounded-xl p-4 border border-slate-600/30">
+                        <p className="text-gray-300 text-base">
+                            Constantly learning and exploring new technologies to build amazing digital experiences
+                        </p>
+                        <div className="flex justify-center mt-3 space-x-2">
+                            <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
+                            <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse delay-75"></div>
+                            <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse delay-150"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <div className="flex justify-center mt-4 gap-1">
-                {Array.from({ length: Math.min(skills.length - visibleSkills + 1, skills.length) }).map((_, idx) => (
-                    <div
-                        key={idx}
-                        className={`w-2 h-2 rounded-full ${startIndex === idx ? 'bg-white' : 'bg-gray-600'} transition-colors duration-300`}
-                        onClick={() => setStartIndex(idx)}
-                    />
-                ))}
-            </div>
-        </div>
+        </section>
     );
 }
