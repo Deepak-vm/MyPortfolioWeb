@@ -69,10 +69,9 @@ export default function SkillsSection() {
                 {/* Section Header */}
                 <div className="text-center mb-8">
                     <div className="inline-block">
-                        <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent mb-3">
+                        <h2 className="text-3xl md:text-5xl font-bold tracking-tighter mb-3 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
                             Skills & Technologies
                         </h2>
-                        <div className="h-1 w-24 bg-gradient-to-r from-cyan-400 to-purple-400 mx-auto rounded-full"></div>
                     </div>
                     <p className="text-gray-400 mt-3 text-base">Technologies I work with</p>
                 </div>
