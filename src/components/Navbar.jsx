@@ -84,7 +84,7 @@ function Navbar() {
 
             {/* Desktop Resume Button */}
             <button className="hidden md:block px-4 py-2 text-white bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 rounded-lg transition-all duration-300 font-medium shadow-lg hover:shadow-cyan-500/25"
-                onClick={() => window.open('https://drive.google.com/file/d/1V0nJ76sEHHoiOHojlPzN2NJAPgpU2Vaf/view?usp=sharing', '_blank')}>
+                onClick={() => window.open('https://drive.google.com/file/d/1Ekmk4YHySdfALzmSb6FY2NmhDqcdpWo7/view?usp=sharing', '_blank')}>
                 Resume
             </button>
 
