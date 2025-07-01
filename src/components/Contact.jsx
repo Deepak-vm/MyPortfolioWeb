@@ -164,7 +164,7 @@ function Contact() {
                         </div>
                         <div>
                             <h3 className="text-lg font-bold mb-1 text-white">Email</h3>
-                            <a href="mailto:18vdeepak@gmail.com" className="text-gray-400 hover:text-cyan-400 transition-colors text-sm">18vdeepak@gmail.com</a>
+                            <a href="mailto:vdeepak.me@gmail.com" className="text-gray-400 hover:text-cyan-400 transition-colors text-sm">vdeepak.me@gmail.com</a>
                         </div>
                     </div>
 
