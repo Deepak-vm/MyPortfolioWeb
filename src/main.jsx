@@ -4,7 +4,8 @@ import { init } from 'emailjs-com'
 import './index.css'
 import App from './App.jsx'
 
-init(import.meta.env.EMAILJS_USER_ID);
+// Initialize EmailJS with environment variable
+init(import.meta.env.VITE_EMAILJS_USER_ID);
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

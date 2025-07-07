@@ -98,10 +98,10 @@ function Contact() {
 
         // Send email using EmailJS
         emailjs.send(
-            import.meta.env.EMAILJS_SERVICE_ID,  // EmailJS service ID from env
-            import.meta.env.EMAILJS_TEMPLATE_ID,  // EmailJS template ID from env
+            import.meta.env.VITE_EMAILJS_SERVICE_ID,  // EmailJS service ID from env
+            import.meta.env.VITE_EMAILJS_TEMPLATE_ID,  // EmailJS template ID from env
             templateParams,
-            import.meta.env.EMAILJS_USER_ID  // EmailJS public key from env
+            import.meta.env.VITE_EMAILJS_USER_ID  // EmailJS public key from env
         ).then((response) => {
             // Handle success
             console.log('EmailJS SUCCESS!', response.status, response.text);
