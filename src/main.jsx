@@ -4,8 +4,7 @@ import { init } from 'emailjs-com'
 import './index.css'
 import App from './App.jsx'
 
-// Initialize EmailJS - Replace 'your_user_id' with your actual EmailJS User ID
-init("oGC_JKJRVQh1HcC_h");
+init(import.meta.env.EMAILJS_USER_ID);
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

@@ -94,14 +94,14 @@ function Contact() {
             subject: `New Contact from Portfolio: ${formData.name}`
         };
 
- 
+
 
         // Send email using EmailJS
         emailjs.send(
-            'service_y83n9eq',  // EmailJS service ID
-            'template_gf11p1e',  // EmailJS template ID
+            import.meta.env.EMAILJS_SERVICE_ID,  // EmailJS service ID from env
+            import.meta.env.EMAILJS_TEMPLATE_ID,  // EmailJS template ID from env
             templateParams,
-            'oGC_JKJRVQh1HcC_h'  // EmailJS public key
+            import.meta.env.EMAILJS_USER_ID  // EmailJS public key from env
         ).then((response) => {
             // Handle success
             console.log('EmailJS SUCCESS!', response.status, response.text);
