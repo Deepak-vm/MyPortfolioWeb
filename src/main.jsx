@@ -5,7 +5,9 @@ import './index.css'
 import App from './App.jsx'
 
 // Initialize EmailJS with environment variable
-init(import.meta.env.VITE_EMAILJS_USER_ID);
+const userID = import.meta.env.VITE_EMAILJS_USER_ID;
+init(userID);
+
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
